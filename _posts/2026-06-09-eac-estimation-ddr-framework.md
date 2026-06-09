@@ -19,33 +19,6 @@ authors:
       name: Department of Statistics & Mathematics, University of Toledo
 ---
 
-<p class="post-lead">This post is a concise, section-by-section summary of the paper.</p>
-
-This post is a concise, section-by-section summary of the paper:
-
-**Decisive-Decision Rate (DDR): A Framework for Comparing and Calibrating Equivalence Acceptance Criteria**.
-
-The goal is to explain the full argument of the manuscript in blog format while preserving the same scientific meaning.
-
----
-
-## Abstract Summary
-
-The paper addresses a core comparability challenge: how to choose an Equivalence Acceptance Criteria (EAC) margin $$\Delta$$ for TOST.
-
-- If $$\Delta$$ is too wide, paradoxical conclusions appear (difference detected but equivalence also declared).
-- If $$\Delta$$ is too narrow, decisions become inconclusive and overly conservative.
-
-The DDR framework evaluates candidate margins through Monte Carlo cross-classification of D-test and E-test outcomes into four zones. From this, the paper defines three diagnostics:
-
-$$
-DDR,\quad PR,\quad GZR
-$$
-
-and introduces an integrated score (iDDR) to rank methods across shift ranges.
-
----
-
 ## 1. Introduction Summary
 
 Section 1 motivates the work using pharmaceutical process changes (site transfers, scale-up, equipment updates), where regulators expect evidence of comparability.
@@ -65,7 +38,7 @@ The paper's contribution is not a new hypothesis test. It is a **calibration fra
 Section 2 defines the two-population setup and compares four EAC families:
 
 1. $$\sigma$$-scaled: $$\Delta_A = \lambda\sigma_{pre}$$
-2. Percent-of-mean: $$\Delta_B = \lambda_{\%}|\mu_{pre}|$$
+2. Percent-of-mean: $$\Delta_B = \lambda_{\mathrm{pct}}\,|\mu_{pre}|$$
 3. Effect-size with variance inflation: $$\Delta_C = ES\,\hat\sigma_{upper}$$
 4. Ppk-informed capability margin: $$\Delta_D$$ from specification-distance and capability target
 
@@ -90,6 +63,28 @@ Section 3 defines the decision matrix by crossing:
 - E-test pass/fail
 
 This yields four zones (concordant-equivalent, grey zone, paradox, concordant-different). The diagnostics are:
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center;"></th>
+      <th style="text-align:center;">E-test pass</th>
+      <th style="text-align:center;">E-test fail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th style="text-align:center;">D-test fail</th>
+      <td style="text-align:center;"><strong>Z1</strong><br>Concordant-equivalent</td>
+      <td style="text-align:center;"><strong>Z2</strong><br>Grey zone</td>
+    </tr>
+    <tr>
+      <th style="text-align:center;">D-test pass</th>
+      <td style="text-align:center;"><strong>Z3</strong><br>Paradox</td>
+      <td style="text-align:center;"><strong>Z4</strong><br>Concordant-different</td>
+    </tr>
+  </tbody>
+</table>
 
 $$
 DDR = \frac{Z_1 + Z_4}{N},\qquad PR = \frac{Z_3}{N},\qquad GZR = \frac{Z_2}{N}.
@@ -227,5 +222,4 @@ These sections strengthen the theoretical and empirical rigor behind the practic
 
 ## Source Notes
 
-- This post summarizes the attached manuscript `ddr_paper.tex` and uses its corresponding figure set.
 - Foundational equivalence-testing context follows TOST literature and comparability guidance cited in the paper bibliography.

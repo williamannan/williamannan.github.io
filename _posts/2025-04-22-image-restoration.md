@@ -404,6 +404,13 @@ In summary, although both estimators perform similarly in a statistical sense, t
 </div>
 <div class="caption">Animated tradeoff between edge preservation and noise removal as smoothing intensity increases.</div>
 
+### How to Read the Animation
+
+- At low smoothing levels, both curves are low because denoising has barely started.
+- In the mid-range, noise removal rises quickly while edge preservation also improves, showing the most practical gain zone.
+- At higher smoothing levels, both curves flatten, indicating diminishing returns from additional smoothing.
+- The useful operating region is typically around the middle of the curve where improvement is steep but not yet saturated.
+
 ## Source Check Notes
 
 - MTEX documents denoising options for EBSD orientation maps, including total variation style filtering and tradeoffs in edge preservation: <a href="https://mtex-toolbox.github.io/EBSDDenoising.html">MTEX EBSD Denoising</a>.

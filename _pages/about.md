@@ -37,7 +37,8 @@ latest_posts:
     <p>
       I am a quantitative researcher and statistician with 7+ years of academic, industry, and research experience.
       My current work supports CMC and biopharmaceutical manufacturing in New Brunswick, NJ, where I develop
-      statistical solutions for filing, investigations, tech transfer, and stability analysis.
+      statistical solutions for filing, investigations, tech transfer, and stability analysis, while leading AI development
+      for statistical analysis automation to support regulatory filings.
     </p>
     <p>
       I earned my PhD in Applied Mathematics (2024) from <a href="https://www.clarkson.edu/">Clarkson University</a>,

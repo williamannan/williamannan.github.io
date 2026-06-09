@@ -11,6 +11,7 @@ description: A concise narrative summary of my background and research direction
 
 <section class="story-panel">
 	<p>I currently support CMC and biopharmaceutical manufacturing workflows in New Brunswick, NJ as a statistician, with emphasis on stability analysis, comparability decisions, and statistical communication for filing and investigations.</p>
+	<p>I am also leading AI development for statistical analysis automation to support regulatory filings.</p>
 </section>
 
 <section class="about-panels">

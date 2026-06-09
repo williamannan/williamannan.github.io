@@ -78,41 +78,41 @@ We also perform replication by independently assigning the treatments to several
 <table>
   <thead>
     <tr>
-      <th>Treatment Dose</th>
-      <th style="text-align:right;">Mean Y Level</th>
-      <th style="text-align:right;">Std Dev</th>
+      <th style="text-align:center;">Treatment Dose</th>
+      <th style="text-align:center;">Mean Y Level</th>
+      <th style="text-align:center;">Std Dev</th>
       <th style="text-align:center;">N</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>$$\tau_0$$ (Control)</td>
-      <td style="text-align:right;">7.2</td>
-      <td style="text-align:right;">1.1</td>
+      <td style="text-align:center;">$$\tau_0$$ (Control)</td>
+      <td style="text-align:center;">7.2</td>
+      <td style="text-align:center;">1.1</td>
       <td style="text-align:center;">12</td>
     </tr>
     <tr>
-      <td>$$\tau_1$$</td>
-      <td style="text-align:right;">7.9</td>
-      <td style="text-align:right;">1.3</td>
+      <td style="text-align:center;">$$\tau_1$$</td>
+      <td style="text-align:center;">7.9</td>
+      <td style="text-align:center;">1.3</td>
       <td style="text-align:center;">12</td>
     </tr>
     <tr>
-      <td>$$\tau_2$$</td>
-      <td style="text-align:right;">9.8</td>
-      <td style="text-align:right;">1.5</td>
+      <td style="text-align:center;">$$\tau_2$$</td>
+      <td style="text-align:center;">9.8</td>
+      <td style="text-align:center;">1.5</td>
       <td style="text-align:center;">12</td>
     </tr>
     <tr>
-      <td>$$\tau_3$$</td>
-      <td style="text-align:right;">12.5</td>
-      <td style="text-align:right;">2.1</td>
+      <td style="text-align:center;">$$\tau_3$$</td>
+      <td style="text-align:center;">12.5</td>
+      <td style="text-align:center;">2.1</td>
       <td style="text-align:center;">12</td>
     </tr>
     <tr>
-      <td>$$\tau_4$$</td>
-      <td style="text-align:right;">15.7</td>
-      <td style="text-align:right;">2.5</td>
+      <td style="text-align:center;">$$\tau_4$$</td>
+      <td style="text-align:center;">15.7</td>
+      <td style="text-align:center;">2.5</td>
       <td style="text-align:center;">12</td>
     </tr>
   </tbody>
@@ -122,42 +122,10 @@ We also perform replication by independently assigning the treatments to several
 
 #### 🎞️ Dose-Response Animation (Illustrative)
 
-```plotly
-{
-  "data": [
-    {
-      "x": [0, 1, 2, 3, 4],
-      "y": [7.2, 7.9, 9.8, 12.5, 15.7],
-      "mode": "lines+markers",
-      "name": "Mean Y",
-      "line": {"color": "#d35400", "width": 3}
-    }
-  ],
-  "layout": {
-    "title": "Illustrative increase in toxicity marker Y with dose",
-    "xaxis": {"title": "Dose group"},
-    "yaxis": {"title": "Y concentration (pg/ml)"}
-  },
-  "frames": [
-    {"name": "f1", "data": [{"x": [0, 1], "y": [7.2, 7.9]}]},
-    {"name": "f2", "data": [{"x": [0, 1, 2], "y": [7.2, 7.9, 9.8]}]},
-    {"name": "f3", "data": [{"x": [0, 1, 2, 3], "y": [7.2, 7.9, 9.8, 12.5]}]},
-    {"name": "f4", "data": [{"x": [0, 1, 2, 3, 4], "y": [7.2, 7.9, 9.8, 12.5, 15.7]}]}
-  ],
-  "updatemenus": [
-    {
-      "type": "buttons",
-      "buttons": [
-        {
-          "label": "Play",
-          "method": "animate",
-          "args": [null, {"frame": {"duration": 550, "redraw": true}, "fromcurrent": true}]
-        }
-      ]
-    }
-  ]
-}
-```
+<div class="media-frame">
+  <iframe src="{{ '/assets/plotly/bioassay_dose_response.html' | relative_url }}" frameborder="0" scrolling="no" title="Dose-response animation"></iframe>
+</div>
+<div class="caption">Animated dose-response trend for toxicity marker Y. X-axis: dose groups ($$\tau_0$$ to $$\tau_4$$). Y-axis: Y concentration (pg/ml).</div>
 
 ---
 
@@ -183,6 +151,10 @@ Failing to reject the null hypothesis means that there is no difference in the t
 
 #### 📋 Experimental Design Table
 
+{% tabs design-options %}
+
+{% tab design-options RCBD Full Factorial %}
+
 |            |              |                                 Treatments                                      |
 | ---------- | :----------- | :-------------------------: | :--------: | :--------: | :--------: | :--------: |
 |            |              | $$\tau_0 \text{(Control)}$$ | $$\tau_1$$ | $$\tau_2$$ | $$\tau_3$$ | $$\tau_4$$ |
@@ -190,12 +162,53 @@ Failing to reject the null hypothesis means that there is no difference in the t
 | Age Groups | $$\alpha_2$$ |              4              |      4     |      4     |      4     |      4     |
 |            | $$\alpha_3$$ |              4              |      4     |      4     |      4     |      4     |
 
-<p> </p>
+This is the balanced randomized complete block design used in the main setup.
 
-Here, I employed a randomized complete block design with a full factorial design.
-Also, since I chose and equal number of experimental units in each factor-level combination, we have a balanced design.
-Thus, this is a **randomized complete block design** with **balanced replication** (equal $$n$$ in each group).  
-In real-world settings, subject mortality may lead to an **unbalanced design**, reducing statistical power.
+{% endtab %}
+
+{% tab design-options Fractional Factorial (2^(4-1), Resolution IV) %}
+
+| Run | A (Dose) | B (Frequency) | C (Vehicle) | D = A×B×C |
+| :-- | :------: | :-----------: | :---------: | :-------: |
+| 1   | -        | -             | -           | -         |
+| 2   | +        | -             | -           | +         |
+| 3   | -        | +             | -           | +         |
+| 4   | +        | +             | -           | -         |
+| 5   | -        | -             | +           | +         |
+| 6   | +        | -             | +           | -         |
+| 7   | -        | +             | +           | -         |
+| 8   | +        | +             | +           | +         |
+
+This design cuts runs in half while preserving estimability of main effects and selected interactions.
+
+{% endtab %}
+
+{% tab design-options Fractional Factorial (2^(5-2), Resolution III) %}
+
+| Run | A (Dose) | B (Vehicle) | C = A×B | D = A | E = B |
+| :-- | :------: | :---------: | :-----: | :---: | :---: |
+| 1   | -        | -           | +       | -     | -     |
+| 2   | +        | -           | -       | +     | -     |
+| 3   | -        | +           | -       | -     | +     |
+| 4   | +        | +           | +       | +     | +     |
+
+This very compact screen is useful when pilot material is limited and only broad directional effects are needed.
+
+{% endtab %}
+
+{% tab design-options Split-Plot Design %}
+
+| Whole Plot (Batch) | Whole-Plot Factor: Formulation | Subplot Factor: Dose | Replicates |
+| :---------------- | :-----------------------------: | :------------------: | :--------: |
+| W1                | F1                              | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 each |
+| W2                | F2                              | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 each |
+| W3                | F3                              | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 each |
+
+Split-plot structure is practical when formulation changes are expensive (whole plot) but dose assignment is easy within each batch (subplot).
+
+{% endtab %}
+
+{% endtabs %}
 
 ---
 
