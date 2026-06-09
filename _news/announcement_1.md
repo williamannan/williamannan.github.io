@@ -5,4 +5,5 @@ inline: true
 related_posts: false
 ---
 
-Published a new post: <a href="/blog/2026/eac-estimation-ddr-framework/">EAC Estimation and DDR Framework</a>, focused on coherent equivalence assessment and decision diagnostics.
+{% assign latest_post = site.posts | first %}
+Latest blog post: <a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a> ({{ latest_post.date | date: "%b %d, %Y" }}).

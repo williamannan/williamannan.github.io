@@ -108,7 +108,6 @@ body.sticky-bottom-footer {
   grid-template-columns: 1.3fr 1fr;
   gap: 1.25rem;
   margin: 0.3rem 0 1rem;
-  animation: storyReveal 600ms ease-out both;
 }
 
 .story-kicker {
@@ -128,9 +127,9 @@ body.sticky-bottom-footer {
 }
 
 .post-lead {
-  font-size: 1.12rem;
-  line-height: 1.8;
-  color: color-mix(in srgb, var(--global-text-color) 86%, var(--global-theme-color) 14%);
+  font-size: 1.06rem;
+  line-height: 1.72;
+  color: var(--global-text-color);
   margin-bottom: 1rem;
 }
 
@@ -153,16 +152,14 @@ body.sticky-bottom-footer {
 .story-panel {
   padding: 0.9rem 1rem;
   border: 1px solid var(--global-divider-color);
-  border-radius: 0.75rem;
-  background: color-mix(in srgb, var(--global-bg-color) 92%, var(--global-theme-color) 8%);
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  border-radius: 0.4rem;
+  background: var(--global-bg-color);
+  transition: border-color 180ms ease;
 }
 
 .story-card:hover,
 .story-panel:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--global-theme-color) 45%, var(--global-divider-color) 55%);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  border-color: color-mix(in srgb, var(--global-theme-color) 25%, var(--global-divider-color) 75%);
 }
 
 .story-card h3,
@@ -195,9 +192,9 @@ body.sticky-bottom-footer {
 
 .signal-card {
   padding: 0.85rem 0.95rem;
-  border-radius: 0.8rem;
+  border-radius: 0.4rem;
   border: 1px solid var(--global-divider-color);
-  background: color-mix(in srgb, var(--global-bg-color) 89%, var(--global-theme-color) 11%);
+  background: var(--global-bg-color);
 }
 
 .signal-card h3 {
@@ -222,10 +219,8 @@ body.sticky-bottom-footer {
 .story-cta {
   margin: 0.85rem 0 0.2rem;
   padding: 0.9rem 1rem;
-  border-left: 4px solid var(--global-theme-color);
-  background: color-mix(in srgb, var(--global-theme-color) 9%, var(--global-bg-color) 91%);
-  animation: storyLift 650ms ease-out both;
-  animation-delay: 120ms;
+  border-left: 2px solid var(--global-theme-color);
+  background: var(--global-bg-color);
 }
 
 .cv-download-btn {
@@ -248,30 +243,6 @@ body.sticky-bottom-footer {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   background: color-mix(in srgb, var(--global-theme-color) 22%, var(--global-bg-color) 78%);
   text-decoration: none;
-}
-
-@keyframes storyReveal {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes storyLift {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 768px) {
