@@ -158,6 +158,11 @@ To keep notation consistent across all options below, factor levels in screening
 
 The full RCBD design uses explicit dose groups $$\tau_0$$ through $$\tau_4$$. Fractional and split-plot alternatives are streamlined versions used when resources or logistics are constrained.
 
+> Design notation legend:
+> - $$A$$ = Dose, $$B$$ = Frequency, $$C$$ = Vehicle/Formulation
+> - "Derived" columns are constructed from design generators and help reduce the number of required runs
+> - RCBD is shown in treatment-dose notation ($$\tau_0$$ to $$\tau_4$$), while screening designs use coded factor levels ($$0/1$$)
+
 {% tabs design-options %}
 
 {% tab design-options RCBD Full Factorial %}
@@ -226,6 +231,8 @@ In practice, these designs form a progression:
 - RCBD full factorial is the most complete option and strongest for detailed inference.
 - Fractional factorial designs reduce runs for early screening and factor prioritization.
 - Split-plot designs handle operational constraints while preserving valid treatment comparisons.
+
+Reading them together: start with fractional designs to identify influential factors, move to split-plot when execution constraints dominate, and confirm final dose-response conclusions with the full RCBD structure.
 
 ---
 
