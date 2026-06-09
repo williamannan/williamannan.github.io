@@ -1423,13 +1423,10 @@ figure.cover {
  ******************************************************************************/
 
 body {
-  font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.75;
-  letter-spacing: 0.01em;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(15, 118, 110, 0.08), transparent 38%),
-    radial-gradient(circle at 100% 0%, rgba(187, 101, 61, 0.08), transparent 34%),
-    var(--global-bg-color);
+  font-family: "Source Sans 3", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.68;
+  letter-spacing: 0;
+  background: var(--global-bg-color);
 }
 
 h1,
@@ -1440,35 +1437,35 @@ h5,
 h6,
 .post-title,
 .card-title {
-  font-family: "Fraunces", Georgia, serif;
-  letter-spacing: 0.01em;
+  font-family: "Source Serif 4", Georgia, serif;
+  letter-spacing: 0;
 }
 
 .container {
-  max-width: 1040px;
+  max-width: 980px;
 }
 
 .post {
-  background: color-mix(in srgb, var(--global-card-bg-color) 92%, transparent);
-  border: 1px solid var(--global-divider-color);
-  border-radius: 18px;
-  padding: 1.35rem 1.35rem 0.85rem;
-  box-shadow: 0 14px 38px rgba(12, 24, 20, 0.06);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 .post > article {
-  padding-bottom: 0.35rem;
+  padding-bottom: 0.2rem;
 }
 
 .post-header {
   border-bottom: 1px solid var(--global-divider-color);
-  margin-bottom: 1.2rem;
-  padding-bottom: 1rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.75rem;
 }
 
 .post-header .post-title {
-  font-size: clamp(1.7rem, 1.1rem + 1.8vw, 2.6rem);
-  line-height: 1.22;
+  font-size: clamp(1.55rem, 1.05rem + 1.25vw, 2.2rem);
+  line-height: 1.28;
 }
 
 .post-header .post-description,
@@ -1478,62 +1475,63 @@ h6,
 }
 
 .navbar {
-  backdrop-filter: blur(12px);
-  background-color: color-mix(in srgb, var(--global-bg-color) 85%, white 15%);
+  backdrop-filter: none;
+  background-color: var(--global-bg-color);
   border-bottom: 1px solid var(--global-divider-color);
 }
 
 .navbar .container {
-  border-radius: 14px;
-  padding: 0.25rem 0.65rem;
+  border-radius: 0;
+  padding: 0;
 }
 
 .navbar.navbar-light .navbar-nav .nav-item .nav-link {
-  border-radius: 999px;
-  padding: 0.35rem 0.8rem;
-  font-weight: 600;
-  font-size: 0.93rem;
+  border-radius: 0;
+  padding: 0.3rem 0.45rem;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
-  color: var(--global-hover-text-color);
-  background: var(--global-theme-color);
+  color: var(--global-theme-color);
+  background: transparent;
 }
 
 .header-bar {
-  border: 1px solid var(--global-divider-color);
-  border-radius: 18px;
-  padding: 1.8rem 1.2rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1.25rem;
-  background: linear-gradient(145deg, color-mix(in srgb, var(--global-theme-color) 10%, white 90%), color-mix(in srgb, var(--global-theme-color) 2%, white 98%));
+  border: 0;
+  border-radius: 0;
+  padding: 0.25rem 0 0.75rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.8rem;
+  background: transparent;
 }
 
 .header-bar h1 {
-  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.8rem);
+  font-size: clamp(1.6rem, 1.25rem + 1.3vw, 2.4rem);
   color: var(--global-text-color);
 }
 
 .tag-category-list {
-  border-bottom: none;
-  border: 1px dashed var(--global-divider-color);
-  border-radius: 14px;
-  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 0;
+  margin-bottom: 1rem;
 }
 
 .featured-posts .card,
 .post-list li {
   border: 1px solid var(--global-divider-color);
-  border-radius: 14px;
+  border-radius: 0.35rem;
   background: var(--global-card-bg-color);
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  transition: border-color 180ms ease;
 }
 
 .featured-posts .card:hover,
 .post-list li:hover {
-  transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--global-theme-color) 55%, var(--global-divider-color) 45%);
-  box-shadow: 0 14px 28px rgba(12, 24, 20, 0.08);
+  border-color: color-mix(in srgb, var(--global-theme-color) 35%, var(--global-divider-color) 65%);
+  box-shadow: none;
 }
 
 .post-list {
@@ -1547,8 +1545,8 @@ h6,
 }
 
 .post-list .post-title {
-  font-size: clamp(1.15rem, 1rem + 0.45vw, 1.5rem);
-  line-height: 1.35;
+  font-size: clamp(1.08rem, 0.98rem + 0.35vw, 1.32rem);
+  line-height: 1.4;
 }
 
 .post-list p {
@@ -1566,7 +1564,7 @@ h6,
 
 .post-content,
 #markdown-content {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
 }
 
 .post-content > * + *,
@@ -1645,7 +1643,7 @@ h6,
 
 footer.sticky-bottom {
   border-top: 1px solid var(--global-divider-color);
-  background: color-mix(in srgb, var(--global-footer-bg-color) 92%, black 8%);
+  background: var(--global-footer-bg-color);
 }
 
 footer.sticky-bottom .container,
@@ -1657,12 +1655,12 @@ footer.fixed-bottom .container {
 
 @media (max-width: 768px) {
   .post {
-    padding: 1rem 0.85rem 0.6rem;
-    border-radius: 14px;
+    padding: 0;
+    border-radius: 0;
   }
 
   .header-bar {
-    padding: 1.4rem 0.9rem;
+    padding: 0.2rem 0 0.65rem;
   }
 
   .blog-thumb {
