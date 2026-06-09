@@ -33,7 +33,7 @@ latest_posts:
 <section class="story-hero" id="overview">
   <div class="story-hero__intro">
     <p class="section-eyebrow">Mathematics, statistics, and data science for practical decisions</p>
-    <h2>Building rigorous quantitative methods that translate complex data into clear action</h2>
+    <h2>Transforming Data into Actionable Insights</h2>
     <p class="post-lead">
       I am Emmanuel A. Atindama, an applied mathematician and statistician focused on trustworthy, real-world analytics.
     </p>
@@ -48,15 +48,11 @@ latest_posts:
   <div class="story-hero__facts">
     <article class="story-card">
       <h3>Quantitative Focus</h3>
-      <p>Statistical inference, design of experiments, and interpretable modeling for defensible outcomes.</p>
-    </article>
-    <article class="story-card">
-      <h3>Technical Breadth</h3>
-      <p>Applied mathematics, data science, and scientific computing across research and industry workflows.</p>
+      <p>Statistical analysis, experimental design, and data-driven modeling.</p>
     </article>
     <article class="story-card">
       <h3>Working Style</h3>
-      <p>Method-first collaboration with clear communication, reproducible code, and cross-functional alignment.</p>
+      <p>Reproducible scientific work and clear cross-functional communication.</p>
     </article>
   </div>
 </section>
@@ -64,15 +60,11 @@ latest_posts:
 <section class="signal-grid" id="impact-metrics">
   <article class="signal-card">
     <h3>Domain Experience</h3>
-    <p>Biopharma, manufacturing analytics, and academic research environments.</p>
+    <p>Biopharma, manufacturing analytics, academic research environments, general data-driven modeling, and building Python libraries.</p>
   </article>
   <article class="signal-card">
     <h3>Core Stack</h3>
-    <p>R, Python, SAS, JMP, and Shiny for auditable analytical pipelines.</p>
-  </article>
-  <article class="signal-card">
-    <h3>Open Source</h3>
-    <p>Reusable tools and practical examples that connect methods to implementation.</p>
+    <p>Python, R, SAS, JMP, Shiny, Streamlit, and Git.</p>
   </article>
 </section>
 

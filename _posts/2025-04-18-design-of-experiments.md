@@ -156,12 +156,17 @@ To keep notation consistent across all options below, factor levels in screening
 - $$0$$ = low level
 - $$1$$ = high level
 
-The full RCBD design uses explicit dose groups $$\tau_0$$ through $$\tau_4$$. Fractional and split-plot alternatives are streamlined versions used when resources or logistics are constrained.
+The full RCBD design uses explicit treatment-dose groups $$\tau_0$$ through $$\tau_4$$ across age groups $$\alpha_1, \alpha_2, \alpha_3$$.
+Fractional and split-plot alternatives are streamlined versions used when resources or logistics are constrained.
+
+Here, frequency means how often each treatment is administered (e.g., once every 4 weeks versus a higher-frequency schedule).
+It is a treatment setting and does not replace treatment identity; it is studied alongside treatment dose and age-group blocking.
 
 > Design notation legend:
 > - $$A$$ = Dose, $$B$$ = Frequency, $$C$$ = Vehicle/Formulation
 > - "Derived" columns are constructed from design generators and help reduce the number of required runs
 > - RCBD is shown in treatment-dose notation ($$\tau_0$$ to $$\tau_4$$), while screening designs use coded factor levels ($$0/1$$)
+> - A run is one unique factor-level combination. Replicates are repeated observations of the same run.
 
 {% tabs design-options %}
 
@@ -192,6 +197,7 @@ This is the balanced randomized complete block design used in the main setup.
 | 8   | 1        | 1             | 1           | 1           |
 
 This design cuts runs in half while preserving estimability of main effects and selected interactions.
+Each row is one run (one treatment-setting combination), and each run can have one or more biological replicates.
 
 {% endtab %}
 
@@ -209,6 +215,7 @@ This design cuts runs in half while preserving estimability of main effects and 
 | 8   | 1        | 1             | 1           | 1           | 1           |
 
 This lower-resolution screen is useful when pilot material is limited and only broad directional effects are needed.
+Again, each row is a run, not automatically a single replicate.
 
 {% endtab %}
 
@@ -221,6 +228,7 @@ This lower-resolution screen is useful when pilot material is limited and only b
 | W3                | 2                 | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 |
 
 Split-plot structure is practical when formulation changes are expensive (whole plot) but dose assignment is easy within each batch (subplot).
+Within each whole plot, age-group blocking and replicate counts can still be applied at the subplot level.
 
 {% endtab %}
 
