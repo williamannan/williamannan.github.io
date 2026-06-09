@@ -22,6 +22,8 @@ authors:
 bibliography: 2018-12-22-distill.bib
 ---
 
+<p class="post-lead">A strong toxicity study design should make dose-response conclusions clear, reproducible, and statistically defensible.</p>
+
 This experimental design was part of a preclinical bioassay, but it can be adapted to clinical settings.  
 The goal was to determine whether drug "X" could be administered at higher doses without causing toxic side effects.  
 Drug "X" was delivered through intravitreal injection (injection into the eye), and administration occurred once every **4 weeks**.
@@ -73,13 +75,48 @@ We also perform replication by independently assigning the treatments to several
 
 #### 🧮 Summary Statistics for "Y" Levels (Toxicity Marker)
 
-| Treatment Dose       | Mean Y Level | Std Dev |   N   |
-| :------------------- | -----------: | ------: | :---: |
-| $$\tau_0$$ (Control) | 7.2          | 1.1     |   12  |
-| $$\tau_1$$           | 7.9          | 1.3     |   12  |
-| $$\tau_2$$           | 9.8          | 1.5     |   12  |
-| $$\tau_3$$           | 12.5         | 2.1     |   12  |
-| $$\tau_4$$           | 15.7         | 2.5     |   12  |
+<table>
+  <thead>
+    <tr>
+      <th>Treatment Dose</th>
+      <th style="text-align:right;">Mean Y Level</th>
+      <th style="text-align:right;">Std Dev</th>
+      <th style="text-align:center;">N</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$$\tau_0$$ (Control)</td>
+      <td style="text-align:right;">7.2</td>
+      <td style="text-align:right;">1.1</td>
+      <td style="text-align:center;">12</td>
+    </tr>
+    <tr>
+      <td>$$\tau_1$$</td>
+      <td style="text-align:right;">7.9</td>
+      <td style="text-align:right;">1.3</td>
+      <td style="text-align:center;">12</td>
+    </tr>
+    <tr>
+      <td>$$\tau_2$$</td>
+      <td style="text-align:right;">9.8</td>
+      <td style="text-align:right;">1.5</td>
+      <td style="text-align:center;">12</td>
+    </tr>
+    <tr>
+      <td>$$\tau_3$$</td>
+      <td style="text-align:right;">12.5</td>
+      <td style="text-align:right;">2.1</td>
+      <td style="text-align:center;">12</td>
+    </tr>
+    <tr>
+      <td>$$\tau_4$$</td>
+      <td style="text-align:right;">15.7</td>
+      <td style="text-align:right;">2.5</td>
+      <td style="text-align:center;">12</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 

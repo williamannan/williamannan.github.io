@@ -2,14 +2,14 @@
 layout: post
 title: EAC Estimation with the DDR Framework
 date: 2026-06-09 10:00:00-0400
-description: A practical guide to estimating Equivalence Acceptance Criteria (EAC) using Decisive-Decision Rate diagnostics.
+description: Section-by-section summary of the DDR paper for calibrating Equivalence Acceptance Criteria in comparability studies.
 tags: Statistics DesignOfExperiments
 categories: my-posts
 giscus_comments: true
 related_posts: true
 pretty_table: true
 tabs: true
-thumbnail: assets/img/sampling/sampling.png
+thumbnail: assets/img/eac/baseline.png
 chart:
   plotly: true
 authors:
@@ -19,103 +19,213 @@ authors:
       name: Department of Statistics & Mathematics, University of Toledo
 ---
 
-This post summarizes a practical workflow for estimating an Equivalence Acceptance Criteria (EAC) when evaluating pre-change vs post-change manufacturing behavior.
+<p class="post-lead">This post is a concise, section-by-section summary of the paper.</p>
 
-The content is based on my local LaTeX paper draft and computational notebook for the DDR framework.
+This post is a concise, section-by-section summary of the paper:
 
-## Why EAC Estimation Is Hard
+**Decisive-Decision Rate (DDR): A Framework for Comparing and Calibrating Equivalence Acceptance Criteria**.
 
-When you run a TOST-style equivalence test, your final decision depends critically on the margin $$\Delta$$.
+The goal is to explain the full argument of the manuscript in blog format while preserving the same scientific meaning.
 
-- If $$\Delta$$ is too wide, you may claim equivalence even when a meaningful shift exists.
-- If $$\Delta$$ is too narrow, you may reject acceptable changes and create unnecessary operational burden.
+---
 
-A useful margin should produce coherent decisions between:
+## Abstract Summary
 
-- a difference test (D-test), and
-- an equivalence test (E-test / TOST).
+The paper addresses a core comparability challenge: how to choose an Equivalence Acceptance Criteria (EAC) margin $$\Delta$$ for TOST.
 
-## DDR Idea in One Figure
+- If $$\Delta$$ is too wide, paradoxical conclusions appear (difference detected but equivalence also declared).
+- If $$\Delta$$ is too narrow, decisions become inconclusive and overly conservative.
 
-The DDR framework classifies each simulation run into four zones:
-
-1. Concordant-equivalent (good)
-2. Grey zone / inconclusive
-3. Paradox (difference detected but equivalence also declared)
-4. Concordant-different (good)
-
-From this, we compute:
+The DDR framework evaluates candidate margins through Monte Carlo cross-classification of D-test and E-test outcomes into four zones. From this, the paper defines three diagnostics:
 
 $$
-DDR = P(\text{concordant outcomes}),\qquad
-PR = P(\text{paradox}),\qquad
-GZR = P(\text{grey zone}).
+DDR,\quad PR,\quad GZR
 $$
 
-A strong EAC setting should maximize DDR while controlling PR and GZR.
+and introduces an integrated score (iDDR) to rank methods across shift ranges.
 
-## Four EAC Methods Compared
+---
 
-I compared four EAC families used in practice:
+## 1. Introduction Summary
 
-1. $$\sigma$$-scaled: $$\Delta = \lambda\sigma_{pre}$$
-2. Percent-of-mean: $$\Delta = \lambda_\% |\mu_{pre}|$$
-3. Effect-size based with variance inflation
-4. Ppk-informed margin from process capability targets
+Section 1 motivates the work using pharmaceutical process changes (site transfers, scale-up, equipment updates), where regulators expect evidence of comparability.
 
-Baseline setup from the notebook:
+Key message:
 
-- $$\mu/\sigma = 50$$, $$S/\sigma = 5$$
-- $$n_{pre}=n_{post}=20$$
-- $$\sigma_{post}/\sigma_{pre}=1$$
-- $$\alpha_d=\alpha_e=0.05$$
+- TOST is standard, but margin selection is underdeveloped.
+- Existing methods are often proposed in isolation.
+- Existing frameworks (TST/zone interpretation, SGPV, post-hoc data-dependent margins) are useful but solve different problems.
 
-Expected baseline ordering for margin width:
+The paper's contribution is not a new hypothesis test. It is a **calibration framework** that compares and ranks margin methods by decision coherence.
 
-$$
-\Delta_D < \Delta_C < \Delta_A < \Delta_B.
-$$
+---
 
-## Interactive Shift Animation
+## 2. Preliminaries Summary
 
-<div class="l-page">
-  <iframe src="{{ '/assets/plotly/eac_shift_sweep.html' | relative_url }}" frameborder='0' scrolling='no' height="560px" width="100%" style="border: 1px dashed #999;"></iframe>
+Section 2 defines the two-population setup and compares four EAC families:
+
+1. $$\sigma$$-scaled: $$\Delta_A = \lambda\sigma_{pre}$$
+2. Percent-of-mean: $$\Delta_B = \lambda_{\%}|\mu_{pre}|$$
+3. Effect-size with variance inflation: $$\Delta_C = ES\,\hat\sigma_{upper}$$
+4. Ppk-informed capability margin: $$\Delta_D$$ from specification-distance and capability target
+
+The section derives the Ppk-informed margin for centered and off-center processes, then introduces a practical capability-retention form. It also highlights feasibility boundaries where target capability makes non-zero margin impossible.
+
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/eac/baseline.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
 </div>
 <div class="caption">
-  Shift sweep animation generated from my EAC experiments. It shows how decision zones and operating characteristics evolve as true mean shift increases.
+Baseline EAC comparison from the paper: methods imply very different standardized margins, which directly affects decision behavior.
 </div>
 
-## Illustrative DDR Curves
+---
 
-```plotly
-{
-  "data": [
-    {"x": [0, 0.5, 1.0, 1.5, 2.0, 2.5], "y": [0.92, 0.90, 0.85, 0.79, 0.73, 0.68], "mode": "lines+markers", "name": "A: sigma-scaled"},
-    {"x": [0, 0.5, 1.0, 1.5, 2.0, 2.5], "y": [0.88, 0.84, 0.76, 0.67, 0.59, 0.50], "mode": "lines+markers", "name": "B: percent-mean"},
-    {"x": [0, 0.5, 1.0, 1.5, 2.0, 2.5], "y": [0.90, 0.88, 0.82, 0.75, 0.68, 0.62], "mode": "lines+markers", "name": "C: effect-size"},
-    {"x": [0, 0.5, 1.0, 1.5, 2.0, 2.5], "y": [0.94, 0.92, 0.87, 0.80, 0.73, 0.66], "mode": "lines+markers", "name": "D: Ppk-informed"}
-  ],
-  "layout": {
-    "title": "Illustrative DDR vs standardized shift",
-    "xaxis": {"title": "True shift (delta/sigma_pre)"},
-    "yaxis": {"title": "DDR", "range": [0.45, 1.0]}
-  }
-}
-```
+## 3. DDR Framework Summary
 
-## Practical Takeaways
+Section 3 defines the decision matrix by crossing:
 
-1. For broad, robust use across many scenarios, $$\sigma$$-scaled EAC performs consistently well.
-2. Ppk-informed EAC is very strong when specification limits and capability targets are reliable.
-3. Percent-of-mean EAC can become miscalibrated when mean scale is disconnected from process variability.
-4. DDR-style diagnostics give an actionable way to tune EAC rather than relying only on one-off heuristics.
+- D-test pass/fail
+- E-test pass/fail
 
-## Download Companion Material
+This yields four zones (concordant-equivalent, grey zone, paradox, concordant-different). The diagnostics are:
 
-- Paper draft (PDF): [DDR EAC Framework]({{ '/assets/pdf/ddr_eac_framework_paper.pdf' | relative_url }})
+$$
+DDR = \frac{Z_1 + Z_4}{N},\qquad PR = \frac{Z_3}{N},\qquad GZR = \frac{Z_2}{N}.
+$$
 
-## Source Check Notes
+Then the paper defines the DDR curve as a function of standardized shift $$\delta/\sigma_{pre}$$ and introduces:
 
-- Equivalence testing foundations are based on TOST (Schuirmann, 1987) and subsequent pharmaceutical comparability usage.
-- NIST acceptance sampling terminology and OC-curve interpretation: <a href="https://www.itl.nist.gov/div898/handbook/pmc/section2/pmc22.htm">NIST/SEMATECH e-Handbook, 6.2.2</a>.
-- ICH Q5E remains a standard international reference for comparability after manufacturing changes.
+$$
+iDDR = \frac{1}{\delta_{max}/\sigma}\int_0^{\delta_{max}/\sigma} DDR(\delta/\sigma)\,d(\delta/\sigma)
+$$
+
+as a scalar ranking metric.
+
+Interpretation:
+
+- High DDR: coherent decisions.
+- High PR: margin too wide.
+- High GZR: margin too narrow or underpowered.
+
+---
+
+## 4. Experimental Setup Summary
+
+Section 4 describes a factorial Monte Carlo engine over dimensionless process descriptors. The paper uses:
+
+- standardized shifts,
+- varying sample sizes and sample-size imbalance,
+- variance-ratio stress tests,
+- process off-centering,
+- specification-to-variability and mean-to-variability ratios.
+
+The design separates method structure from arbitrary scale choices, and includes tuning sweeps to ensure methods are not unfairly judged by poor default hyperparameters.
+
+---
+
+## 5. Results Summary
+
+Section 5 has two layers of findings.
+
+### Baseline behavior
+
+At the baseline scenario, method behavior differs sharply in paradox-vs-grey-zone tradeoff.
+
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/eac/methods_baseline_performance.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+</div>
+<div class="caption">
+Baseline DDR/GZR/PR diagnostic curves from the paper.
+</div>
+
+### Robustness and ranking across the factorial grid
+
+Across thousands of valid scenarios, the paper reports:
+
+- $$\sigma$$-scaled as strongest general-purpose performer by mean iDDR.
+- Ppk-informed as excellent in capability-anchored settings with very low paradox risk.
+- Effect-size method as highly conservative (near-zero paradox, higher grey-zone burden).
+- Percent-of-mean as structurally vulnerable to paradox inflation when disconnected from variability.
+
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/eac/power_curves.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+</div>
+<div class="caption">Operating characteristic curves used in the paper's baseline analysis.</div>
+
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/eac/violin_plots.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+</div>
+<div class="caption">Distribution of iDDR over the full factorial set.</div>
+
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/eac/sample_size_robustness.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/eac/unequal_variance_robustness.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+</div>
+<div class="caption">Robustness trends with sample size and variance mismatch.</div>
+
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/eac/parameter_tuning_optimization.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+</div>
+<div class="caption">Tuning optimization confirms ranking gaps are largely structural, not only parameter-choice artifacts.</div>
+
+---
+
+## 6. Discussion Summary
+
+Section 6 translates diagnostics into practical guidance:
+
+- Use method A when you need robust, interpretable default behavior across broad operating conditions.
+- Use method D when specification limits and capability framing are central.
+- Use method C for safety-critical settings where paradox risk should be minimized.
+- Avoid method B as a standalone rule when process mean scale is a weak proxy for process variability.
+
+The section also discusses relationship to TST, SGPV, and data-dependent margins, emphasizing complementarity rather than replacement.
+
+---
+
+## 7. Conclusion Summary
+
+The paper's conclusion is that DDR provides a quantitative calibration lens for EAC selection.
+
+- It separates wide-margin failure modes (paradox) from narrow-margin failure modes (grey zone).
+- It supports direct method ranking via iDDR.
+- It provides sample-size and robustness insight unavailable from one-off equivalence tests.
+
+In short, DDR is a decision-quality framework for margin specification, not just a testing workflow.
+
+---
+
+## Appendix Summary
+
+The appendices provide:
+
+- metric-space properties for DDR-derived distances,
+- ANOVA effect-size attribution for factorial drivers,
+- Monte Carlo validation of sample-size requirements under estimated-variance conditions.
+
+These sections strengthen the theoretical and empirical rigor behind the practical recommendations.
+
+---
+
+## Download
+
+- Full paper PDF: [DDR EAC Framework]({{ '/assets/pdf/ddr_eac_framework_paper.pdf' | relative_url }})
+
+## Source Notes
+
+- This post summarizes the attached manuscript `ddr_paper.tex` and uses its corresponding figure set.
+- Foundational equivalence-testing context follows TOST literature and comparability guidance cited in the paper bibliography.

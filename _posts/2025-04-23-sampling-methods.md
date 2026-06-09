@@ -22,6 +22,8 @@ authors:
 bibliography: 2018-12-22-distill.bib
 ---
 
+<p class="post-lead">Sampling is how we make reliable decisions when complete data collection is expensive, slow, or destructive.</p>
+
 We live in an age of big data. Millions of data is collected by the second all over; weather data, shared posts and likes on social media, location data on our
 phones, credit card transactions, etc. Storing and analyzing this data requires a lot of expensive hardware, and so it is often useful to use only a portion of the 
 data to perform quick analysis, and then extrapolating the results to the entire population.
@@ -78,7 +80,7 @@ Sampling is important because;
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/sampling_illustration.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/sampling_illustration.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 <div class="caption"> A sampling illustration<d-cite key="medium_article"></d-cite>. 
@@ -106,7 +108,7 @@ Using a uniform distribution, each member of the population has a known *<b>equa
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/random_sampling.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/random_sampling.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 <div class="caption"> An illustration of <i>simple random sampling</i> <d-cite key="medium_article"></d-cite>.</div>
@@ -116,7 +118,7 @@ A population is divided into <b>subgroups (strata)</b> and a simple random sampl
 📌 *Example:* Sampling students from different academic majors.
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/stratified_sampling.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/stratified_sampling.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 <div class="caption"> A graphical representation of <i>stratified sampling</i> <d-cite key="medium_article"></d-cite>.</div>
@@ -254,7 +256,7 @@ Taking the natural logarithm on both sides: $$n \geq \frac{\ln(1 - x)}{\ln\left(
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/barchart.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/barchart.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 <div class="caption"> A bar chart representation of <i>sample size</i> with corresponding probability of drawing at least one defective item. 
@@ -280,13 +282,6 @@ boundaries of our confidence to provide more insight of this activity. We will v
 *In the first result, the lower bound was negative 1 (we round up to 0 when since we are analysing physical items).*
 
 > To achieve an $$x\%$$ probability of finding at least one defective in a batch, we need a sample size, $$ n \geq \frac{\ln(1 - x)}{\ln\left( \frac{190}{200} \right)}. $$
-
-<div class="l-page">
-    <iframe src="{{ '/assets/plotly/eac_shift_sweep.html' | relative_url }}" frameborder='0' scrolling='no' height="520px" width="100%" style="border: 1px dashed #999;"></iframe>
-</div>
-<div class="caption">
-    Animated visualization of decision behavior as the true shift changes. This helps build intuition for why sample size and margin choices alter acceptance/rejection behavior.
-</div>
 
 #### Source Check Notes
 
@@ -329,7 +324,7 @@ But, first some things to think about and understand.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/bad_apples.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/bad_apples.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div> 
     <div class="caption"> 
         In this figure, there are only 5 apples in a lot or container (1st column) with one bad apple(3). You are selecting two for inspection.
@@ -462,7 +457,7 @@ $$
 
 <div class="row mt-1">
     <div class="col-sm mt-1 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/hypergeom.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/hypergeom.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div> 
 </div>
 <div class="caption"> 
@@ -514,7 +509,7 @@ That is, the sample size is no more than 10% of the population size, so sampling
 
 <div class="row mt-1">
     <div class="col-sm mt-1 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/binom.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/binom.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div> 
 </div>
 <div class="caption"> 
@@ -578,7 +573,7 @@ $$
 
 <div class="row mt-1">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/poiss.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/poiss.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div> 
 </div>
 <div class="caption"> 
@@ -592,10 +587,10 @@ $$
 
 <div class="row mt-2">
     <div class="col-sm mt-2 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/sampling_distribution_comparison.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/sampling_distribution_comparison.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div> 
     <div class="col-sm mt-2 mt-md-1">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/graph_comparison.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/graph_comparison.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div> 
 </div>
 <div class="caption"> 
@@ -627,7 +622,7 @@ Other probabilistic samples too may be chosen. Although the samples in the batch
 
 <div class="row mt-1">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/sampling/oc_curve.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/sampling/oc_curve.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div> 
 </div>
 <div class="caption"> 

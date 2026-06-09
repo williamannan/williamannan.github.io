@@ -16,6 +16,8 @@ authors:
 bibliography: bib_posts.bib
 
 thumbnail: assets/img/tv_res/noisy.png
+chart:
+    plotly: true
 
 # Optionally, you can add a table of contents to your post.
 # NOTES:
@@ -71,6 +73,8 @@ $$
 </div>
 
 ## Introduction
+<p class="post-lead">This article explains how weighted total variation flow restores noisy EBSD orientation maps while preserving grain boundaries and structural detail.</p>
+
 Metals like titanium, aluminium, and steel have crystalline microstructures composed of crystal grains—regions of similar atomic orientation. These grains strongly influence material properties such as elasticity, strength, and fracture behavior <d-cite key="Microstructure-OxfordInstruments"></d-cite>. 
 
 To study these properties, crystal orientations are often measured using **Electron Backscatter Diffraction (EBSD)**, which provides Euler angles describing each grain's orientation. However, EBSD measurements can suffer from noise, missing regions, or inaccuracies—sometimes within $$1^{\circ}$$ of error <d-cite key="Microstructure-OxfordInstruments"></d-cite> which may compromise conclusions about material integrity.
@@ -88,11 +92,11 @@ In this blog post, we employ the theory of variational filters. Variational filt
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/tv_res/ebsd_illustration.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/tv_res/ebsd_illustration.png" class="img-fluid rounded z-depth-1" zoomable=true %}
         <div class="caption">Synthetic map<i>a</i></div>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/tv_res/noisy.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/tv_res/noisy.png" class="img-fluid rounded z-depth-1" zoomable=true %}
         <div class="caption">Noisy Synthetic map <i>b</i></div>
     </div>
 </div>
@@ -205,7 +209,7 @@ This formulation retains coupling between different channels, and respects struc
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/tv_res/denoising.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/tv_res/denoising.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 <div class="caption">
@@ -244,7 +248,7 @@ Minor variations in $$\sigma$$ do not significantly affect overall performance, 
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/tv_res/betas_degrees.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/tv_res/betas_degrees.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 <div class="caption">
@@ -363,11 +367,11 @@ We implemented the two estimators as follows:
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/tv_res/boxplot_noiseestimates.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/tv_res/boxplot_noiseestimates.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="caption"><i>a</i></div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/tv_res/boxplot_noiseestimates_noiselevels.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/tv_res/boxplot_noiseestimates_noiselevels.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="caption"><i>b</i></div>
 </div>
@@ -395,50 +399,10 @@ In summary, although both estimators perform similarly in a statistical sense, t
 
 ## Animated Tradeoff View
 
-```plotly
-{
-    "data": [
-        {
-            "x": [0.02, 0.05, 0.10, 0.15, 0.20],
-            "y": [0.30, 0.55, 0.71, 0.79, 0.84],
-            "mode": "lines+markers",
-            "name": "Edge preservation",
-            "line": {"color": "#1f77b4", "width": 3}
-        },
-        {
-            "x": [0.02, 0.05, 0.10, 0.15, 0.20],
-            "y": [0.18, 0.33, 0.50, 0.62, 0.74],
-            "mode": "lines+markers",
-            "name": "Noise removal",
-            "line": {"color": "#e67e22", "width": 3}
-        }
-    ],
-    "layout": {
-        "title": "Illustrative tradeoff as denoising aggressiveness increases",
-        "xaxis": {"title": "Effective smoothing level"},
-        "yaxis": {"title": "Normalized score", "range": [0, 1]}
-    },
-    "frames": [
-        {"name": "s1", "data": [{"x": [0.02], "y": [0.30]}, {"x": [0.02], "y": [0.18]}]},
-        {"name": "s2", "data": [{"x": [0.02, 0.05], "y": [0.30, 0.55]}, {"x": [0.02, 0.05], "y": [0.18, 0.33]}]},
-        {"name": "s3", "data": [{"x": [0.02, 0.05, 0.10], "y": [0.30, 0.55, 0.71]}, {"x": [0.02, 0.05, 0.10], "y": [0.18, 0.33, 0.50]}]},
-        {"name": "s4", "data": [{"x": [0.02, 0.05, 0.10, 0.15], "y": [0.30, 0.55, 0.71, 0.79]}, {"x": [0.02, 0.05, 0.10, 0.15], "y": [0.18, 0.33, 0.50, 0.62]}]},
-        {"name": "s5", "data": [{"x": [0.02, 0.05, 0.10, 0.15, 0.20], "y": [0.30, 0.55, 0.71, 0.79, 0.84]}, {"x": [0.02, 0.05, 0.10, 0.15, 0.20], "y": [0.18, 0.33, 0.50, 0.62, 0.74]}]}
-    ],
-    "updatemenus": [
-        {
-            "type": "buttons",
-            "buttons": [
-                {
-                    "label": "Play",
-                    "method": "animate",
-                    "args": [null, {"frame": {"duration": 450, "redraw": true}, "fromcurrent": true}]
-                }
-            ]
-        }
-    ]
-}
-```
+<div class="media-frame">
+  <iframe src="{{ '/assets/plotly/tv_tradeoff.html' | relative_url }}" frameborder="0" scrolling="no" title="Animated denoising tradeoff"></iframe>
+</div>
+<div class="caption">Animated tradeoff between edge preservation and noise removal as smoothing intensity increases.</div>
 
 ## Source Check Notes
 

@@ -1417,3 +1417,281 @@ figure.cover {
     color: #23212d !important;
   }
 }
+
+/*******************************************************************************
+ * Visual Refresh Overrides
+ ******************************************************************************/
+
+body {
+  font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(15, 118, 110, 0.08), transparent 38%),
+    radial-gradient(circle at 100% 0%, rgba(187, 101, 61, 0.08), transparent 34%),
+    var(--global-bg-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title,
+.card-title {
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: 0.01em;
+}
+
+.container {
+  max-width: 1040px;
+}
+
+.post {
+  background: color-mix(in srgb, var(--global-card-bg-color) 92%, transparent);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 18px;
+  padding: 1.35rem 1.35rem 0.85rem;
+  box-shadow: 0 14px 38px rgba(12, 24, 20, 0.06);
+}
+
+.post > article {
+  padding-bottom: 0.35rem;
+}
+
+.post-header {
+  border-bottom: 1px solid var(--global-divider-color);
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+}
+
+.post-header .post-title {
+  font-size: clamp(1.7rem, 1.1rem + 1.8vw, 2.6rem);
+  line-height: 1.22;
+}
+
+.post-header .post-description,
+.post-header .desc {
+  color: var(--global-text-color-light);
+  max-width: 70ch;
+}
+
+.navbar {
+  backdrop-filter: blur(12px);
+  background-color: color-mix(in srgb, var(--global-bg-color) 85%, white 15%);
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.navbar .container {
+  border-radius: 14px;
+  padding: 0.25rem 0.65rem;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.93rem;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  color: var(--global-hover-text-color);
+  background: var(--global-theme-color);
+}
+
+.header-bar {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 18px;
+  padding: 1.8rem 1.2rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--global-theme-color) 10%, white 90%), color-mix(in srgb, var(--global-theme-color) 2%, white 98%));
+}
+
+.header-bar h1 {
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.8rem);
+  color: var(--global-text-color);
+}
+
+.tag-category-list {
+  border-bottom: none;
+  border: 1px dashed var(--global-divider-color);
+  border-radius: 14px;
+  margin-bottom: 1.2rem;
+}
+
+.featured-posts .card,
+.post-list li {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 14px;
+  background: var(--global-card-bg-color);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.featured-posts .card:hover,
+.post-list li:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--global-theme-color) 55%, var(--global-divider-color) 45%);
+  box-shadow: 0 14px 28px rgba(12, 24, 20, 0.08);
+}
+
+.post-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.post-list li {
+  border-bottom: 1px solid var(--global-divider-color);
+  padding: 1.2rem 1rem;
+}
+
+.post-list .post-title {
+  font-size: clamp(1.15rem, 1rem + 0.45vw, 1.5rem);
+  line-height: 1.35;
+}
+
+.post-list p {
+  margin-bottom: 0.65rem;
+}
+
+.blog-thumb {
+  display: block;
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid var(--global-divider-color);
+}
+
+.post-content,
+#markdown-content {
+  font-size: 1.05rem;
+}
+
+.post-content > * + *,
+#markdown-content > * + * {
+  margin-top: 1rem;
+}
+
+.post-content p,
+#markdown-content p,
+.post-content li,
+#markdown-content li {
+  max-width: 72ch;
+}
+
+.post-content h2,
+#markdown-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.post-content h3,
+#markdown-content h3 {
+  margin-top: 1.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-content ul,
+.post-content ol,
+#markdown-content ul,
+#markdown-content ol {
+  padding-left: 1.2rem;
+}
+
+.post-content li,
+#markdown-content li {
+  margin-bottom: 0.35rem;
+}
+
+.post-content blockquote,
+#markdown-content blockquote {
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--global-theme-color) 8%, var(--global-card-bg-color) 92%);
+}
+
+.post-content table,
+#markdown-content table {
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.post-content table th,
+.post-content table td,
+#markdown-content table th,
+#markdown-content table td {
+  border-bottom: 1px solid var(--global-divider-color);
+  padding: 0.55rem 0.8rem;
+}
+
+.post-content code,
+#markdown-content code {
+  font-size: 0.94em;
+  border: 1px solid var(--global-divider-color);
+}
+
+.pagination .page-item .page-link {
+  border-radius: 10px;
+  border: 1px solid var(--global-divider-color);
+  margin: 0 0.2rem;
+  background: var(--global-card-bg-color);
+}
+
+footer.sticky-bottom {
+  border-top: 1px solid var(--global-divider-color);
+  background: color-mix(in srgb, var(--global-footer-bg-color) 92%, black 8%);
+}
+
+footer.sticky-bottom .container,
+footer.fixed-bottom .container {
+  font-size: 0.9rem;
+  padding-top: 1.05rem;
+  padding-bottom: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .post {
+    padding: 1rem 0.85rem 0.6rem;
+    border-radius: 14px;
+  }
+
+  .header-bar {
+    padding: 1.4rem 0.9rem;
+  }
+
+  .blog-thumb {
+    height: 150px;
+    margin-top: 0.5rem;
+  }
+
+  .post-list li {
+    padding: 1rem 0.8rem;
+  }
+
+  .post-content,
+  #markdown-content {
+    font-size: 1rem;
+  }
+
+  .post-content > * + *,
+  #markdown-content > * + * {
+    margin-top: 0.8rem;
+  }
+
+  .post-content h2,
+  #markdown-content h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .post-content h3,
+  #markdown-content h3 {
+    margin-top: 1.15rem;
+  }
+}

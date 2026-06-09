@@ -29,8 +29,11 @@ latest_posts:
 
 <section class="story-hero" id="overview">
   <div class="story-hero__intro">
-    <p class="story-kicker">From mathematical theory to practical impact</p>
+    <p class="section-eyebrow">From mathematical theory to practical impact</p>
     <h2>Designing robust statistical decisions for regulated manufacturing and applied AI</h2>
+    <p class="post-lead">
+      I build evidence pipelines that move from noisy, high-dimensional data to decisions teams can defend in front of technical, quality, and regulatory stakeholders.
+    </p>
     <p>
       I am a quantitative researcher and statistician with 7+ years of academic, industry, and research experience.
       My current work supports CMC and biopharmaceutical manufacturing in New Brunswick, NJ, where I develop
@@ -59,6 +62,21 @@ latest_posts:
   </div>
 </section>
 
+<section class="signal-grid" id="impact-metrics">
+  <article class="signal-card">
+    <h3>7+ Years</h3>
+    <p>Academic, industry, and applied statistical research experience.</p>
+  </article>
+  <article class="signal-card">
+    <h3>CMC + Manufacturing</h3>
+    <p>Focused on comparability, stability, investigations, and process decisions.</p>
+  </article>
+  <article class="signal-card">
+    <h3>Open Reproducibility</h3>
+    <p>Methods implemented in R, Python, SAS, and Shiny with traceable analysis workflows.</p>
+  </article>
+</section>
+
 <section class="story-grid" id="experience">
   <article class="story-panel">
     <h3>What I Work On</h3>
@@ -80,6 +98,16 @@ latest_posts:
       case studies, and implementation notes.
     </p>
   </article>
+</section>
+
+<section class="story-panel story-timeline" id="career-highlights">
+  <h3>Career Highlights</h3>
+  <ul>
+    <li><strong>Bristol Myers Squibb / SOKOL GxP:</strong> Statistical support for CMC and biopharmaceutical manufacturing decisions.</li>
+    <li><strong>University of Toledo:</strong> Visiting Assistant Professor in data science and applied statistics.</li>
+    <li><strong>Clarkson University:</strong> PhD research in inverse problems, image reconstruction, and scientific computing.</li>
+    <li><strong>Regeneron:</strong> Statistical and data-science support in applied biopharma contexts.</li>
+  </ul>
 </section>
 
 <section class="story-cta" id="opportunities">
