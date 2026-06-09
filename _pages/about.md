@@ -5,7 +5,7 @@ permalink: /
 nav: true
 nav_order: 1
 description: A concise narrative summary of my background and research direction.
-subtitle: Statistician in CMC and biopharmaceutical manufacturing.
+subtitle: Statistician in CMC and biopharmaceutical manufacturing at Bristol Myers Squibb.
 
 profile:
   align: left
@@ -35,24 +35,25 @@ latest_posts:
     <p class="section-eyebrow">Mathematics, statistics, and data science for practical decisions</p>
     <h2>Transforming Data into Actionable Insights</h2>
     <p class="post-lead">
-      I am Emmanuel A. Atindama, an applied mathematician and statistician focused on trustworthy, real-world analytics.
+      I am an applied mathematician and statistician focused on data-driven modeling of real-world dynamics.
     </p>
     <p>
-      I develop statistical and computational methods for high-stakes decision-making across research, operations, and regulated environments.
+      I develop statistical and computational tools for decision-making across research, operations, and regulated environments.
+      Currently, I am working on AI integration for automating statistical reporting in regulatory submissions 
     </p>
     <p>
-      I earned my PhD in Applied Mathematics (2024) from <a href="https://www.clarkson.edu/">Clarkson University</a> and built <a href="https://github.com/emmanuelatindama/PyEBSD-SEM">PyEBSD-SEM</a>, an open-source toolkit for EBSD data restoration.
+      I earned my PhD in Mathematics (2024) from <a href="https://www.clarkson.edu/">Clarkson University</a> where I built <a href="https://github.com/emmanuelatindama/PyEBSD-SEM">PyEBSD-SEM</a>, an open-source toolkit for EBSD data processing.
     </p>
   </div>
 
   <div class="story-hero__facts">
     <article class="story-card">
       <h3>Quantitative Focus</h3>
-      <p>Statistical analysis, experimental design, and data-driven modeling.</p>
+      <p>Statistical analysis, experimental design, data-driven modeling, and software development.</p>
     </article>
     <article class="story-card">
       <h3>Working Style</h3>
-      <p>Reproducible scientific work and clear cross-functional communication.</p>
+      <p>Reproducible scientific work with cross-functional collaborations.</p>
     </article>
   </div>
 </section>
@@ -60,11 +61,11 @@ latest_posts:
 <section class="signal-grid" id="impact-metrics">
   <article class="signal-card">
     <h3>Domain Experience</h3>
-    <p>Biopharma, manufacturing analytics, academic research environments, general data-driven modeling, and building Python libraries.</p>
+    <p>Biopharma, manufacturing analytics, academic research, data-driven modeling, and building Python libraries.</p>
   </article>
   <article class="signal-card">
     <h3>Core Stack</h3>
-    <p>Python, R, SAS, JMP, Shiny, Streamlit, and Git.</p>
+    <p>Python, R, SAS, JMP, Shiny, Streamlit, and Git (Version Control).</p>
   </article>
 </section>
 
