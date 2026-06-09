@@ -4,11 +4,13 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
-  - emmanuelatindama/Image_processing_app
+  - emmanuelatindama/manim
+  - emmanuelatindama/emmanuelatindama.github.io
   - emmanuelatindama/PyEBSD-SEM
+  - emmanuelatindama/Math_Teaching_Docs
+  - emmanuelatindama/Transformers-Tutorials
+  - emmanuelatindama/pdfExtractor
+  - emmanuelatindama/Image_processing_app
   - emmanuelatindama/Early-STEM
-  - emmanuelatindama/Computer-Vision-OpenCV3-in-Python-and-Machine-Learning
-  # - jquery/jquery
-  # - FortAwesome/Font-Awesome
-  # - mathjax/MathJax
-  # - jpswalsh/academicons
+  - emmanuelatindama/Machine-learning-with-Andrew-Ng
+  - emmanuelatindama/Kaggle-competitions
