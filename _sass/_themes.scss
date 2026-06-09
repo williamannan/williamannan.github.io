@@ -6,8 +6,8 @@
 
 :root {
   color-scheme: light;
-  --global-bg-color: #f2e8d8;
-  --global-code-bg-color: #ede2d0;
+  --global-bg-color: #f8f1e6;
+  --global-code-bg-color: #f3eadc;
   --global-text-color: #0f2f57;
   --global-text-color-light: #3f5a7b;
   --global-theme-color: #6b3fd6;
@@ -18,7 +18,7 @@
   --global-footer-link-color: #efe6ff;
   --global-distill-app-color: #{$grey-color};
   --global-divider-color: rgba(15, 47, 87, 0.2);
-  --global-card-bg-color: #f8efe1;
+  --global-card-bg-color: #fcf6ec;
   --global-highlight-color: #{$red-color-dark};
   --global-back-to-top-bg-color: rgba(
     #{color.channel($black-color, "red", $space: rgb)},
@@ -27,7 +27,7 @@
     0.4
   );
   --global-back-to-top-text-color: #{$white-color};
-  --global-newsletter-bg-color: #f8efe1;
+  --global-newsletter-bg-color: #fcf6ec;
   --global-newsletter-text-color: #0f2f57;
 
   --global-tip-block: #42b983;
