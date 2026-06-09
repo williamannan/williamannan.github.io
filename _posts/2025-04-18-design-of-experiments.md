@@ -151,6 +151,13 @@ Failing to reject the null hypothesis means that there is no difference in the t
 
 #### 📋 Experimental Design Table
 
+To keep notation consistent across all options below, factor levels in screening designs are coded as:
+
+- $$0$$ = low level
+- $$1$$ = high level
+
+The full RCBD design uses explicit dose groups $$\tau_0$$ through $$\tau_4$$. Fractional and split-plot alternatives are streamlined versions used when resources or logistics are constrained.
+
 {% tabs design-options %}
 
 {% tab design-options RCBD Full Factorial %}
@@ -168,16 +175,16 @@ This is the balanced randomized complete block design used in the main setup.
 
 {% tab design-options Fractional Factorial (2^(4-1), Resolution IV) %}
 
-| Run | A (Dose) | B (Frequency) | C (Vehicle) | D = A×B×C |
-| :-- | :------: | :-----------: | :---------: | :-------: |
-| 1   | -        | -             | -           | -         |
-| 2   | +        | -             | -           | +         |
-| 3   | -        | +             | -           | +         |
-| 4   | +        | +             | -           | -         |
-| 5   | -        | -             | +           | +         |
-| 6   | +        | -             | +           | -         |
-| 7   | -        | +             | +           | -         |
-| 8   | +        | +             | +           | +         |
+| Run | A (Dose) | B (Frequency) | C (Vehicle) | D (Derived) |
+| :-- | :------: | :-----------: | :---------: | :---------: |
+| 1   | 0        | 0             | 0           | 0           |
+| 2   | 1        | 0             | 0           | 1           |
+| 3   | 0        | 1             | 0           | 1           |
+| 4   | 1        | 1             | 0           | 0           |
+| 5   | 0        | 0             | 1           | 1           |
+| 6   | 1        | 0             | 1           | 0           |
+| 7   | 0        | 1             | 1           | 0           |
+| 8   | 1        | 1             | 1           | 1           |
 
 This design cuts runs in half while preserving estimability of main effects and selected interactions.
 
@@ -185,30 +192,40 @@ This design cuts runs in half while preserving estimability of main effects and 
 
 {% tab design-options Fractional Factorial (2^(5-2), Resolution III) %}
 
-| Run | A (Dose) | B (Vehicle) | C = A×B | D = A | E = B |
-| :-- | :------: | :---------: | :-----: | :---: | :---: |
-| 1   | -        | -           | +       | -     | -     |
-| 2   | +        | -           | -       | +     | -     |
-| 3   | -        | +           | -       | -     | +     |
-| 4   | +        | +           | +       | +     | +     |
+| Run | A (Dose) | B (Frequency) | C (Vehicle) | D (Derived) | E (Derived) |
+| :-- | :------: | :-----------: | :---------: | :---------: | :---------: |
+| 1   | 0        | 0             | 0           | 1           | 1           |
+| 2   | 1        | 0             | 0           | 0           | 0           |
+| 3   | 0        | 1             | 0           | 0           | 1           |
+| 4   | 1        | 1             | 0           | 1           | 0           |
+| 5   | 0        | 0             | 1           | 1           | 0           |
+| 6   | 1        | 0             | 1           | 0           | 1           |
+| 7   | 0        | 1             | 1           | 0           | 0           |
+| 8   | 1        | 1             | 1           | 1           | 1           |
 
-This very compact screen is useful when pilot material is limited and only broad directional effects are needed.
+This lower-resolution screen is useful when pilot material is limited and only broad directional effects are needed.
 
 {% endtab %}
 
 {% tab design-options Split-Plot Design %}
 
-| Whole Plot (Batch) | Whole-Plot Factor: Formulation | Subplot Factor: Dose | Replicates |
-| :---------------- | :-----------------------------: | :------------------: | :--------: |
-| W1                | F1                              | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 each |
-| W2                | F2                              | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 each |
-| W3                | F3                              | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 each |
+| Whole Plot (Batch) | Formulation Level | Dose Levels Applied | Replicates per Dose |
+| :---------------- | :---------------: | :-----------------: | :-----------------: |
+| W1                | 0                 | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 |
+| W2                | 1                 | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 |
+| W3                | 2                 | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 |
 
 Split-plot structure is practical when formulation changes are expensive (whole plot) but dose assignment is easy within each batch (subplot).
 
 {% endtab %}
 
 {% endtabs %}
+
+In practice, these designs form a progression:
+
+- RCBD full factorial is the most complete option and strongest for detailed inference.
+- Fractional factorial designs reduce runs for early screening and factor prioritization.
+- Split-plot designs handle operational constraints while preserving valid treatment comparisons.
 
 ---
 

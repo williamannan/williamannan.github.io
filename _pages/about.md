@@ -32,49 +32,47 @@ latest_posts:
 
 <section class="story-hero" id="overview">
   <div class="story-hero__intro">
-    <p class="section-eyebrow">Applied statistics for regulated decisions</p>
-    <h2>Designing reliable evidence for CMC, manufacturing, and regulatory filing</h2>
+    <p class="section-eyebrow">Mathematics, statistics, and data science for practical decisions</p>
+    <h2>Building rigorous quantitative methods that translate complex data into clear action</h2>
     <p class="post-lead">
-      I am Emmanuel A. Atindama, a statistician and quantitative researcher focused on regulated biopharmaceutical development and manufacturing.
+      I am Emmanuel A. Atindama, an applied mathematician and statistician focused on trustworthy, real-world analytics.
     </p>
     <p>
-      My current work supports CMC and biopharmaceutical manufacturing in New Brunswick, NJ, where I design statistical approaches for filings, investigations, tech transfer, and stability analysis.
-      I also lead AI development for statistical analysis automation and stakeholder alignment for regulatory filings.
+      I develop statistical and computational methods for high-stakes decision-making across research, operations, and regulated environments.
     </p>
     <p>
-      I earned my PhD in Applied Mathematics (2024) from <a href="https://www.clarkson.edu/">Clarkson University</a>, with research in computer vision and image reconstruction.
-      This work led to <a href="https://github.com/emmanuelatindama/PyEBSD-SEM">PyEBSD-SEM</a>, an open-source package for EBSD data restoration.
+      I earned my PhD in Applied Mathematics (2024) from <a href="https://www.clarkson.edu/">Clarkson University</a> and built <a href="https://github.com/emmanuelatindama/PyEBSD-SEM">PyEBSD-SEM</a>, an open-source toolkit for EBSD data restoration.
     </p>
   </div>
 
   <div class="story-hero__facts">
     <article class="story-card">
-      <h3>Most Recent Role</h3>
-      <p>CMC Statistician (Dec 2025 to present) supporting regulated manufacturing decisions.</p>
+      <h3>Quantitative Focus</h3>
+      <p>Statistical inference, design of experiments, and interpretable modeling for defensible outcomes.</p>
     </article>
     <article class="story-card">
-      <h3>Current Development</h3>
-      <p>AI capability for statistical analysis automation and streamlined cross-functional filing workflows.</p>
+      <h3>Technical Breadth</h3>
+      <p>Applied mathematics, data science, and scientific computing across research and industry workflows.</p>
     </article>
     <article class="story-card">
-      <h3>Latest Technical Post</h3>
-      <p><a href="/blog/2026/eac-estimation-ddr-framework/">EAC Estimation and DDR Framework</a>.</p>
+      <h3>Working Style</h3>
+      <p>Method-first collaboration with clear communication, reproducible code, and cross-functional alignment.</p>
     </article>
   </div>
 </section>
 
 <section class="signal-grid" id="impact-metrics">
   <article class="signal-card">
-    <h3>Current Research</h3>
-    <p>EAC estimation and decision diagnostics for coherent equivalence conclusions.</p>
+    <h3>Domain Experience</h3>
+    <p>Biopharma, manufacturing analytics, and academic research environments.</p>
   </article>
   <article class="signal-card">
     <h3>Core Stack</h3>
     <p>R, Python, SAS, JMP, and Shiny for auditable analytical pipelines.</p>
   </article>
   <article class="signal-card">
-    <h3>Hobby Focus</h3>
-    <p>Exploring robotics and microelectronics with Raspberry Pi kits.</p>
+    <h3>Open Source</h3>
+    <p>Reusable tools and practical examples that connect methods to implementation.</p>
   </article>
 </section>
 

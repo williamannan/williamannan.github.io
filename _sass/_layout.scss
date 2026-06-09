@@ -39,7 +39,16 @@ body.sticky-bottom-footer {
 .post-content figure img {
   display: block;
   width: 100%;
-  max-width: 920px;
+  max-width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content img,
+#markdown-content img {
+  display: block;
+  max-width: 60%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -70,7 +79,7 @@ body.sticky-bottom-footer {
 
 @media (max-width: 768px) {
   .post-content figure img {
-    max-width: 100%;
+    max-width: 60%;
   }
 
   .media-frame iframe {
@@ -105,9 +114,13 @@ body.sticky-bottom-footer {
 
 .story-hero {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 2fr 0.75fr;
   gap: 1.25rem;
   margin: 0.3rem 0 1rem;
+}
+
+.story-hero__intro {
+  max-width: none;
 }
 
 .story-kicker {
@@ -146,6 +159,17 @@ body.sticky-bottom-footer {
 .story-hero__facts {
   display: grid;
   gap: 0.75rem;
+}
+
+.post .profile {
+  width: 70%;
+  max-width: 230px;
+}
+
+@media (min-width: 576px) {
+  .post .profile {
+    width: 21%;
+  }
 }
 
 .story-card,
