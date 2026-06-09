@@ -1,0 +1,197 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Emmanuel A. Atindama
+    - name: Location
+      value: New Brunswick, NJ, USA
+    - name: Profile
+      value: 7+ years of industry, academic, and research experience in Data Science, Statistics, and Machine Learning Engineering
+    - name: Focus Areas
+      value: CMC statistics, biopharmaceutical manufacturing, design of experiments, comparability analysis, computer vision
+
+- title: Professional Experience
+  type: time_table
+  contents:
+    - title: Statistician - CMC & Biopharmaceutical Manufacturing (Contractor)
+      institution: Bristol Myers Squibb
+      location: New Brunswick, NJ
+      year: Dec 2025 - Present
+      description:
+        - Leading a team to develop AI agents for statistical memo generation from statistical analysis outputs
+        - Built R Shiny dashboards for fixed-effects and mixed-effects stability modeling
+        - Perform daily statistical analyses supporting filing, drug development, investigations, and tech transfer
+
+    - title: Statistician - CMC & Biopharmaceutical Manufacturing
+      institution: SOKOL GxP
+      location: New Brunswick, NJ
+      year: Dec 2025 - Present
+      description:
+        - Supporting CMC statistical workflows in regulated biopharmaceutical settings
+        - Contributing reproducible analyses and communication for manufacturing and quality stakeholders
+
+    - title: Visiting Assistant Professor - Data Science
+      institution: University of Toledo
+      location: Toledo, OH
+      year: Aug 2024 - Dec 2024
+      description:
+        - Developed and taught Data Visualization with Shiny
+        - Taught Base SAS and Python for data analytics and statistical methods
+        - Taught undergraduate mathematics courses for engineers
+
+    - title: Doctoral Researcher (Dissertation: Computer Vision and Image Reconstruction)
+      institution: Clarkson University
+      location: Potsdam, NY
+      year: Aug 2020 - Aug 2024
+      description:
+        - Created <a href="https://github.com/emmanuelatindama/PyEBSD-SEM">PyEBSD-SEM</a>, a Python library for restoring orientation maps from scanning electron microscopy data
+        - Proposed a 3D convolution kernel to estimate texture with spatial deviation in grain microstructures
+        - Built Python access scripts for Dream3D software pipelines
+
+    - title: Data Scientist
+      institution: Clarkson University
+      location: Potsdam, NY
+      year: Sep 2021 - May 2023
+      description:
+        - Cleaned and analyzed student retention and graduation data in R
+        - Built predictive models to identify high-risk students
+        - Presented analytical findings to university leadership for intervention planning
+
+    - title: Statistician (Intern)
+      institution: Regeneron Pharmaceuticals
+      location: Troy, NY
+      year: May 2023 - Aug 2023
+      description:
+        - Cleaned, compiled, and analyzed change control data using survival analysis
+        - Studied sampling plans for assessing and quantifying lot quality
+        - Studied experimental design (DOE) methods for bioassays
+
+    - title: Teaching Assistant
+      institution: University of Ghana
+      location: Accra, Ghana
+      year: Aug 2017 - Jun 2019
+      description:
+        - Taught undergraduate Calculus and Algebra recitations
+
+- title: Personal Projects
+  type: time_table
+  contents:
+    - title: <a href="https://github.com/rneddojr/LoRA-as-a-Flexible-Framework-for-Securing-Large-Vision-Systems">LoRA as a Flexible Framework for Securing Large Vision Systems</a>
+      year: 2025
+      description:
+        - Applied low-rank adaptation methods to build security patches for image-classification pipelines in autonomous systems
+
+    - title: <a href="https://github.com/emmanuelatindama/Image_processing_app">Image Processing Web Application</a>
+      year: 2025
+      description:
+        - Built a Flask-based application for image-processing tasks using OpenCV
+
+    - title: <a href="https://github.com/emmanuelatindama/PyEBSD-SEM">PyEBSD-SEM</a>
+      year: 2024
+      description:
+        - Built tools for measurement, visualization, denoising, and restoration of EBSD orientation maps
+
+    - title: Evaluating Intervention Methods in STEM Courses
+      year: 2023
+      description:
+        - Compared student demographics, test scores, and graduation outcomes to evaluate intervention effectiveness
+
+    - title: Data Encryption using Matrix Cryptography
+      year: 2015
+      description:
+        - Implemented and evaluated matrix-based encryption and decryption algorithms in Python
+
+- title: Publications and Presentations
+  type: list
+  contents:
+    - SIAM IS24, Crystallographic Data Restoration Using Weighted Total Variation Flow and a Hybrid Deep Learning Method
+    - SIAM MS24, Advances in Parameter-Free Reconstruction of Grain Orientation Data
+    - RAPS Spring 2023, Measuring the Impact of Student Success Retention Initiatives for Engineering Students at a Private Research University
+    - JMM 2023, Weighted Total Variation Flow for Crystallographic Data Reconstruction
+    - MCCNNY 2022, Weighted Total Variation Flow for Crystallographic Data Reconstruction
+    - SIAM IS22, Weighted Total Variation Based Algorithm for Reconstruction of Grain Orientation Data: A Comparative Study
+    - SIAM MS21, Partial Differential Equation Based Methods for Reconstruction of Grain Orientation Data
+    - Frontiers in Education Journal (Dec 2022), Measuring the impact of student success retention initiatives for engineering students at a private research university
+    - Integrating Materials and Manufacturing Innovation (Aug 2023), Restoration of Noisy Orientation Maps from Electron Backscatter Diffraction Imaging
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - title: Better Scientific Software Fellowship
+      year: 2025
+      funding agency: Better Scientific Software
+      description:
+        - Recognition and funding for leadership and advocacy in high-quality scientific software
+
+    - title: SIAM MS24 Travel Grant
+      year: 2024
+      funding agency: SIAM
+      description:
+        - Award to attend the conference and present research
+
+    - title: NIST Grant (2021-NIST-MSE-01)
+      year: 2021
+      funding agency: NIST
+      description:
+        - Award supporting restoration of orientation data from polycrystalline materials as graduate student researcher
+
+- title: Skills
+  type: nested_list
+  contents:
+    - title: Programming
+      items:
+        - Python
+        - R
+        - Java
+        - MATLAB
+        - Octave
+        - Linux Shell
+    - title: Data Analytics and Visualization
+      items:
+        - Pandas, NumPy, OpenCV
+        - Matplotlib, ggplot2, Tableau
+        - R Shiny dashboards
+    - title: Statistical Analysis
+      items:
+        - JMP, SAS, R
+        - Sampling plans and acceptance sampling
+        - Survival analysis and multiple regression
+    - title: Machine Learning
+      items:
+        - PyTorch, TensorFlow, Keras, scikit-learn
+        - NLP and text mining
+        - Generalized linear models, logistic regression, XGBoost, random forest, neural networks
+    - title: Data and Cloud Systems
+      items:
+        - MySQL, SQLite
+        - Cloud computing workflows
+
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD, Applied Mathematics (GPA 3.89/4.0)
+      institution: Clarkson University
+      location: New York
+      year: Sep 2021 - Aug 2024
+      description:
+        - Research in algorithms, deep learning, image processing, statistics and probability, and linear algebra
+
+    - title: MS, Applied Mathematics (GPA 3.89/4.0)
+      institution: Clarkson University
+      location: New York
+      year: Jul 2019 - May 2021
+      description:
+        - Coursework in machine learning, numerical analysis, probability, statistics, and data mining
+
+    - title: BS, Statistics (GPA 3.24/4.0)
+      institution: University of Ghana
+      location: Accra
+      year: Aug 2013 - May 2017
+      description:
+        - Coursework in computational methods, Python programming, statistical methods, and data analytics
+
+- title: Certifications
+  type: list
+  contents:
+    - Python (Basic), HackerRank Certification, ID 447853C2B7BE
+    - SQL (Basic), HackerRank Certification, ID 5E588A452CF9

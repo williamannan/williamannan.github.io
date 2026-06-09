@@ -1,0 +1,14 @@
+github_users:
+  - emmanuelatindama
+
+repo_description_lines_max: 2
+
+github_repos:
+  - emmanuelatindama/Image_processing_app
+  - emmanuelatindama/PyEBSD-SEM
+  - emmanuelatindama/Early-STEM
+  - emmanuelatindama/Computer-Vision-OpenCV3-in-Python-and-Machine-Learning
+  # - jquery/jquery
+  # - FortAwesome/Font-Awesome
+  # - mathjax/MathJax
+  # - jpswalsh/academicons

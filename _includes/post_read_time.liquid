@@ -1,0 +1,5 @@
+{% if include.post.external_source == blank %}
+  {{ include.post.content | number_of_words | divided_by: 180 | plus: 1 }}
+{% else %}
+  {{ include.post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 }}
+{% endif %}
