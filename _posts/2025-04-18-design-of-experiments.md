@@ -153,19 +153,19 @@ Failing to reject the null hypothesis means that there is no difference in the t
 
 To keep notation consistent across all options below, factor levels in screening designs are coded as:
 
-- $$0$$ = low level
-- $$1$$ = high level
+- \(0\) = low level
+- \(1\) = high level
 
-The full RCBD design uses explicit treatment-dose groups $$\tau_0$$ through $$\tau_4$$ across age groups $$\alpha_1, \alpha_2, \alpha_3$$.
+The full RCBD design uses explicit treatment-dose groups \(\tau_0\) through \(\tau_4\) across age groups \(\alpha_1, \alpha_2, \alpha_3\).
 Fractional and split-plot alternatives are streamlined versions used when resources or logistics are constrained.
 
 Here, frequency means how often each treatment is administered (e.g., once every 4 weeks versus a higher-frequency schedule).
 It is a treatment setting and does not replace treatment identity; it is studied alongside treatment dose and age-group blocking.
 
 > Design notation legend:
-> - $$A$$ = Dose, $$B$$ = Frequency, $$C$$ = Vehicle/Formulation
+> - \(A\) = Dose, \(B\) = Frequency, \(C\) = Vehicle/Formulation
 > - "Derived" columns are constructed from design generators and help reduce the number of required runs
-> - RCBD is shown in treatment-dose notation ($$\tau_0$$ to $$\tau_4$$), while screening designs use coded factor levels ($$0/1$$)
+> - RCBD is shown in treatment-dose notation (\(\tau_0\) to \(\tau_4\)), while screening designs use coded factor levels (\(0/1\))
 > - A run is one unique factor-level combination. Replicates are repeated observations of the same run.
 
 {% tabs design-options %}
@@ -174,10 +174,10 @@ It is a treatment setting and does not replace treatment identity; it is studied
 
 |            |              |                                 Treatments                                      |
 | ---------- | :----------- | :-------------------------: | :--------: | :--------: | :--------: | :--------: |
-|            |              | $$\tau_0 \text{(Control)}$$ | $$\tau_1$$ | $$\tau_2$$ | $$\tau_3$$ | $$\tau_4$$ |
-|            | $$\alpha_1$$ |              4              |      4     |      4     |      4     |      4     |
-| Age Groups | $$\alpha_2$$ |              4              |      4     |      4     |      4     |      4     |
-|            | $$\alpha_3$$ |              4              |      4     |      4     |      4     |      4     |
+|            |              | \(\tau_0\) (Control) | \(\tau_1\) | \(\tau_2\) | \(\tau_3\) | \(\tau_4\) |
+|            | \(\alpha_1\) |              4              |      4     |      4     |      4     |      4     |
+| Age Groups | \(\alpha_2\) |              4              |      4     |      4     |      4     |      4     |
+|            | \(\alpha_3\) |              4              |      4     |      4     |      4     |      4     |
 
 This is the balanced randomized complete block design used in the main setup.
 
@@ -223,9 +223,9 @@ Again, each row is a run, not automatically a single replicate.
 
 | Whole Plot (Batch) | Formulation Level | Dose Levels Applied | Replicates per Dose |
 | :---------------- | :---------------: | :-----------------: | :-----------------: |
-| W1                | 0                 | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 |
-| W2                | 1                 | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 |
-| W3                | 2                 | $$\tau_0,\tau_1,\tau_2,\tau_3,\tau_4$$ | 3 |
+| W1                | 0                 | \(\tau_0,\tau_1,\tau_2,\tau_3,\tau_4\) | 3 |
+| W2                | 1                 | \(\tau_0,\tau_1,\tau_2,\tau_3,\tau_4\) | 3 |
+| W3                | 2                 | \(\tau_0,\tau_1,\tau_2,\tau_3,\tau_4\) | 3 |
 
 Split-plot structure is practical when formulation changes are expensive (whole plot) but dose assignment is easy within each batch (subplot).
 Within each whole plot, age-group blocking and replicate counts can still be applied at the subplot level.
