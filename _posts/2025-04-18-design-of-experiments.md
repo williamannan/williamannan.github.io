@@ -125,7 +125,7 @@ We also perform replication by independently assigning the treatments to several
 <div class="media-frame">
   <iframe src="{{ '/assets/plotly/bioassay_dose_response.html' | relative_url }}" frameborder="0" scrolling="no" title="Dose-response animation"></iframe>
 </div>
-<div class="caption">Animated dose-response trend for toxicity marker Y. X-axis: dose groups ($$\tau_0$$ to $$\tau_4$$). Y-axis: Y concentration (pg/ml).</div>
+<div class="caption">Animated dose-response trend for toxicity marker Y. X-axis: dose groups (\(\tau_0\) to \(\tau_4\)). Y-axis: Y concentration (pg/ml).</div>
 
 ---
 
