@@ -277,25 +277,25 @@ Averaged over all 10,368 scenarios at off-the-shelf defaults, the **$$\sigma$$-s
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/eac/sample_size_robustness.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    {% include figure.liquid path="assets/img/eac/sample_size_robustness.png" class="img-fluid rounded z-depth-1" zoomable=true max-width="88%" %}
   </div>
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/eac/overpowered_dtest.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    {% include figure.liquid path="assets/img/eac/overpowered_dtest.png" class="img-fluid rounded z-depth-1" zoomable=true max-width="88%" %}
   </div>
 </div>
-<div class="caption"><strong>Figure 5.</strong> Left: mean iDDR vs. $$n_{pre}$$. Right: the overpowered-D-test effect — at a fixed small shift, every method's paradox rate climbs toward 1 as $$n$$ grows, with the tight-margin Method D resisting longest.</div>
+<div class="caption"><strong>Figure 5.</strong> Left: mean iDDR vs. \(n_{pre}\). Right: the overpowered-D-test effect; at a fixed small shift, every method's paradox rate climbs toward 1 as \(n\) grows, with the tight-margin Method D resisting longest.</div>
 
 **Unequal variance** splits the methods. As the post-change spread inflates, Methods A, B, and D degrade — but Method C *improves*, because its margin depends only on pre-period information while the inflating standard error robs the D-test of the power that fuels its paradoxes:
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/eac/unequal_variance_robustness.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    {% include figure.liquid path="assets/img/eac/unequal_variance_robustness.png" class="img-fluid rounded z-depth-1" zoomable=true max-width="88%" %}
   </div>
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/eac/ppk_feasibility_cliff.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    {% include figure.liquid path="assets/img/eac/ppk_feasibility_cliff.png" class="img-fluid rounded z-depth-1" zoomable=true max-width="88%" %}
   </div>
 </div>
-<div class="caption"><strong>Figure 6.</strong> Left: mean iDDR vs. variance ratio — A, B, D fall while C rises. Right: Method D's feasibility cliff under a <em>fixed</em> target $$Ppk_{target}=1.33$$ — both margin and iDDR collapse at $$S/\sigma=4$$. The relative target $$\rho\,Ppk_{pre}$$ avoids this entirely.</div>
+<div class="caption"><strong>Figure 6.</strong> Left: mean iDDR vs. variance ratio; A, B, and D fall while C rises. Right: Method D's feasibility cliff under a <em>fixed</em> target \(Ppk_{target}=1.33\); both margin and iDDR collapse at \(S/\sigma=4\). The relative target \(\rho\,Ppk_{pre}\) avoids this entirely.</div>
 
 Finally, the iDDR ranking is **stable across the integration range** — choosing $$\delta_{max}$$ anywhere from $$2\sigma$$ to $$6\sigma$$ preserves the D > A > C > B ordering at baseline:
 
