@@ -124,7 +124,7 @@ A few structural points the paper emphasizes:
   </div>
 </div>
 <div class="caption">
-<strong>Figure 1.</strong> Baseline standardized margins ($$\mathrm{EAC}/\sigma_{pre}$$): D = 0.95, A = 1.50, C = 2.06, B = 2.51. The four methods imply very different margins from the <em>same</em> data — and that difference drives everything downstream.
+<strong>Figure 1.</strong> Baseline standardized margins (\(\mathrm{EAC}/\sigma_{pre}\)): D = 0.95, A = 1.50, C = 2.06, B = 2.51. The four methods imply very different margins from the <em>same</em> data — and that difference drives everything downstream.
 </div>
 
 ---
@@ -151,7 +151,7 @@ The engine is a **factorial Monte Carlo** simulation over *dimensionless* proces
   </tbody>
 </table>
 
-<div class="caption">This grid yields $$6\times3\times8\times4\times6\times4 = 13{,}824$$ nominal combinations; after enforcing $$4\le n_{post}\le 30$$, <strong>10,368 valid scenarios</strong> remain. Each is evaluated at 20 standardized shifts over $$[0,\,4\sigma_{pre}]$$ with 5,000 Monte Carlo replicates per shift.</div>
+<div class="caption">This grid yields \(6\times3\times8\times4\times6\times4 = 13{,}824\) nominal combinations; after enforcing \(4\le n_{post}\le 30\), <strong>10,368 valid scenarios</strong> remain. Each is evaluated at 20 standardized shifts over \([0,\,4\sigma_{pre}]\) with 5,000 Monte Carlo replicates per shift.</div>
 
 Two design choices keep the comparison fair:
 
@@ -171,7 +171,7 @@ At the baseline scenario ($$\mu/\sigma=50$$, $$S/\sigma=5$$, $$n_{pre}=n_{post}=
     {% include figure.liquid path="assets/img/eac/power_curves.png" class="img-fluid rounded z-depth-1" zoomable=true %}
   </div>
 </div>
-<div class="caption"><strong>Figure 2.</strong> Analytical operating-characteristic curves (exact non-central $$t$$). Left: TOST pass probability vs. true shift; dotted lines mark each method's margin. Right: the shared D-test power curve.</div>
+<div class="caption"><strong>Figure 2.</strong> Analytical operating-characteristic curves (exact non-central \(t\)). Left: TOST pass probability vs. true shift; dotted lines mark each method's margin. Right: the shared D-test power curve.</div>
 
 Running the DDR engine at this scenario produces the signature U-shaped curves — coherent at the extremes, dipping near each margin's boundary:
 
@@ -304,7 +304,7 @@ Finally, the iDDR ranking is **stable across the integration range** — choosin
     {% include figure.liquid path="assets/img/eac/iddr_range_sensitivity.png" class="img-fluid rounded z-depth-1" zoomable=true %}
   </div>
 </div>
-<div class="caption"><strong>Figure 7.</strong> iDDR vs. the integration upper bound $$\delta_{max}/\sigma_{pre}$$. Absolute values rise with the range, but the ranking is invariant.</div>
+<div class="caption"><strong>Figure 7.</strong> iDDR vs. the integration upper bound \(\delta_{max}/\sigma_{pre}\). Absolute values rise with the range, but the ranking is invariant.</div>
 
 ### 5.4 Tuning — the gaps are structural, and the variance correction *helps*
 
