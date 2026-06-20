@@ -3,9 +3,9 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Emmanuel
-middle_name: A.
-last_name: Atindama
+first_name: William
+middle_name: E.
+last_name: Annan
 contact_note: >
   Email is the best way to reach me.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
@@ -259,8 +259,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Atindama]
-  first_name: [Emmanuel, A.]
+  last_name: [Annan]
+  first_name: [William E.]
 
   style: apa
   locale: en
